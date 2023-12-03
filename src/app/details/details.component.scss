@@ -1,0 +1,24 @@
+.formsss{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-left: 400px;
+    margin-right: 400px;
+    
+}
+
+.button{
+padding: 100px;
+}
+
+
+@media screen and (max-width: 767px) {
+    input {
+      max-width: 100%;}
+  
+    input {
+      width: 100%; 
+      margin-bottom: 10px; 
+    }
+  }
+  

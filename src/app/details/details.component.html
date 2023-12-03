@@ -1,0 +1,43 @@
+
+
+ 
+  <form class="formsss" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="input-label">
+      <div>
+        <label class="form-label" for="name">Name:</label>
+        <input  class="form-control" type="text" id="name" formControlName="name" />
+        <div *ngIf="formControls.name.invalid && (formControls.name.dirty || submitted)">
+          <div *ngIf="formControls.name.errors.required">Name is required</div>
+        </div>
+      </div>
+      <div>
+        <label class="form-label" for="email">Email:</label>
+        <input  class="form-control" type="text" id="email" formControlName="email" />
+        <div *ngIf="formControls.email.invalid && (formControls.email.dirty || submitted)">
+          <div *ngIf="formControls.email.errors.required">Email is required</div>
+          <div *ngIf="formControls.email.errors.email">Invalid email format</div>
+        </div>
+      </div>
+        
+      <div>
+        <label class="form-label" for="phone">Phone:</label>
+        <input  class="form-control" type="text" id="phone" formControlName="phone" />
+        <div *ngIf="formControls.phone.invalid && (formControls.phone.dirty || submitted)">
+          <div *ngIf="formControls.phone.errors.required">Phone is required</div>
+        </div>
+      </div>
+  </div>
+    <div class="button">
+      <button class="btn btn-success" type="submit">Save User Details</button>
+    </div>
+  
+  </form>
+  <br><br>
+  <form >
+    <div style="text-align: center;" class="formcontrol" [style.color]="'red'" *ngIf="statusMessage">
+      <h6>Status:</h6>
+      <p>{{ statusMessage |uppercase }}</p>
+    
+    </div>
+  </form>
+
